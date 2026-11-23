@@ -4,226 +4,377 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oirschot Milsim | Officiële website</title>
+<title>Oirschot Milsim | Dienst • Teamwork • Discipline</title>
+<meta name="description" content="Oirschot Milsim - onafhankelijke militaire Roblox-community.">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --bg: #0b100d;
+  --panel: #151d17;
+  --olive: #a3ad78;
+  --lime: #c1cb91;
+  --text: #f2f3ed;
+  --muted: #b7c0b5;
 }
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
   font-family: Arial, sans-serif;
-  background: #101713;
-  color: white;
+  line-height: 1.6;
 }
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(1160px, 92%); margin: auto; }
 
 header {
-  background: #17221c;
-  padding: 22px 8%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(9,14,10,.95);
+  border-bottom: 1px solid #ffffff20;
+}
+.nav {
+  height: 76px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #344238;
+  justify-content: space-between;
 }
-
-.logo {
-  font-size: 21px;
+.brand { font-weight: 900; letter-spacing: 2px; }
+.brand span { color: var(--lime); }
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+.links { display: flex; gap: 25px; }
+.links a {
+  font-size: 12px;
   font-weight: bold;
-  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-
-nav a {
-  color: #d5ded6;
-  text-decoration: none;
-  margin-left: 24px;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: #a8c69e;
-}
+.links a:hover { color: var(--lime); }
 
 .hero {
-  min-height: 570px;
-  padding: 120px 10%;
+  min-height: 650px;
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg, #101713 5%, #101713dd 50%, #10171366),
-    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=85") center/cover;
+    linear-gradient(90deg, #080d09 0%, #080d09bb 55%, #080d0940),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Combined_Operations_Dutch_and_German_armies.jpg?width=1800") center/cover;
 }
-
-.hero-content {
-  max-width: 650px;
+.hero-content { padding: 100px 0; max-width: 720px; }
+.eyebrow {
+  color: var(--lime);
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: bold;
 }
+.hero h1 {
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: .98;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+.hero h1 span { color: var(--lime); }
+.hero p { max-width: 560px; color: #d4dbd2; font-size: 17px; }
 
-.tag {
-  color: #a8c69e;
-  letter-spacing: 3px;
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  margin-top: 20px;
+  background: var(--olive);
+  color: #101710;
   font-size: 12px;
   font-weight: bold;
-}
-
-h1 {
-  font-size: clamp(38px, 6vw, 68px);
-  margin: 22px 0;
-  line-height: 1.05;
-}
-
-.hero p {
-  color: #d0d8d1;
-  line-height: 1.8;
-  max-width: 550px;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 30px;
-  background: #607b58;
-  color: white;
-  padding: 15px 24px;
-  text-decoration: none;
-  font-weight: bold;
   letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.btn:hover { filter: brightness(1.15); }
+
+.strip {
+  background: #101711;
+  border-top: 1px solid #ffffff20;
+  border-bottom: 1px solid #ffffff20;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 25px 0;
+  text-align: center;
+}
+.stat strong { display: block; text-transform: uppercase; }
+.stat span { color: var(--muted); font-size: 11px; }
+
+section { padding: 90px 0; }
+.kicker {
+  color: var(--olive);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.section-head { max-width: 680px; margin-bottom: 38px; }
+.section-head p, .about p { color: var(--muted); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+.photo {
+  min-height: 390px;
+  background: url("https://commons.wikimedia.org/wiki/Special:FilePath/Chinook-dropt-last-met-twee-lsv.jpg?width=1200") center/cover;
+}
+.about h3 { font-size: 27px; text-transform: uppercase; }
+.ticks { list-style: none; padding: 0; }
+.ticks li {
+  padding: 12px 0;
+  border-bottom: 1px solid #ffffff20;
+  font-weight: bold;
+}
+.ticks li::before {
+  content: "◆";
+  color: var(--lime);
+  margin-right: 12px;
 }
 
-section {
-  padding: 85px 10%;
-}
-
-.section-title {
-  font-size: 30px;
-  margin-bottom: 18px;
-}
-
-.description {
-  color: #b8c3ba;
-  line-height: 1.8;
-  max-width: 750px;
-}
-
+.dark { background: #111913; }
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 35px;
 }
-
 .card {
-  background: #1b2820;
-  border: 1px solid #344238;
-  padding: 30px;
-  min-height: 160px;
+  background: var(--panel);
+  border: 1px solid #ffffff20;
 }
-
-.card h3 {
-  margin-bottom: 15px;
-  color: #b7d0ac;
+.card-img {
+  height: 210px;
+  background-size: cover;
+  background-position: center;
 }
-
-.card p {
-  color: #b8c3ba;
-  line-height: 1.6;
+.card:nth-child(1) .card-img {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Combined_Operations_Dutch_and_German_armies.jpg?width=900");
 }
+.card:nth-child(2) .card-img {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Chinook-dropt-last-met-twee-lsv.jpg?width=900");
+}
+.card:nth-child(3) .card-img {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/VOSS,_Verbeterd_Operationeel_Soldaat_Systeem_-_Dutch_Army_STRONG_Programme_-_Protection_vest,_pouches_and_helmet.jpg?width=900");
+}
+.card-body { padding: 22px; }
+.card-body small { color: var(--lime); letter-spacing: 2px; }
+.card-body h3 { text-transform: uppercase; }
+.card-body p { color: var(--muted); font-size: 14px; }
 
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.value {
+  padding: 25px 18px;
+  background: #1b261e;
+  border-top: 2px solid var(--olive);
+}
+.value b { text-transform: uppercase; }
+.value p { color: var(--muted); font-size: 13px; }
+
+.join {
+  text-align: center;
+  background: linear-gradient(#080d09dd,#080d09ee),
+  url("https://commons.wikimedia.org/wiki/Special:FilePath/Combined_Operations_Dutch_and_German_armies.jpg?width=1800") center/cover;
+}
+.join .section-head { margin: auto; }
+.notice {
+  max-width: 760px;
+  margin: 35px auto 0;
+  padding: 18px;
+  border: 1px solid #c1cb9155;
+  background: #080d09bb;
+  color: #cbd3c6;
+  font-size: 12px;
+}
 footer {
-  padding: 30px 10%;
-  background: #0b100d;
-  color: #89978c;
-  font-size: 13px;
-  border-top: 1px solid #344238;
+  padding: 35px 0;
+  background: #080c09;
+  border-top: 1px solid #ffffff20;
+  color: var(--muted);
+  font-size: 12px;
 }
+.credits {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #ffffff20;
+  font-size: 10px;
+}
+.credits a { text-decoration: underline; }
 
-@media(max-width: 650px) {
-  header {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  nav a {
-    margin: 0 7px;
-  }
-
-  .hero {
-    padding: 90px 8%;
-  }
+@media(max-width:760px) {
+  .links { display: none; }
+  .hero { min-height: 570px; }
+  .stats, .about-grid, .cards { grid-template-columns: 1fr; }
+  .values { grid-template-columns: 1fr 1fr; }
+  section { padding: 65px 0; }
+  .photo { min-height: 270px; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">OIRSCHOT MILSIM</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#over">Over ons</a>
-    <a href="#eenheden">Eenheden</a>
-    <a href="#nieuws">Nieuws</a>
-  </nav>
+  <div class="wrap nav">
+    <a class="brand" href="#home">
+      <span>OM</span> OIRSCHOT MILSIM
+      <small>ROBLOX COMMUNITY</small>
+    </a>
+    <nav class="links">
+      <a href="#home">Home</a>
+      <a href="#over">Over ons</a>
+      <a href="#activiteiten">Community</a>
+      <a href="#waarden">Kernwaarden</a>
+      <a href="#join">Meedoen</a>
+    </nav>
+  </div>
 </header>
 
 <main>
-  <div class="hero" id="home">
-    <div class="hero-content">
-      <div class="tag">ROBUX MILITAIRE SIMULATIECOMMUNITY</div>
-      <h1>DIENST.<br>TEAMWORK.<br>DISCIPLINE.</h1>
+<section class="hero" id="home">
+  <div class="wrap hero-content">
+    <div class="eyebrow">Onafhankelijke Roblox-community</div>
+    <h1>DIENST.<br><span>TEAMWORK.</span><br>DISCIPLINE.</h1>
+    <p>
+      Beleef militaire simulatie in Roblox. Werk samen,
+      ontwikkel jezelf en maak deel uit van een hecht team
+      waarin respect, inzet en kameraadschap centraal staan.
+    </p>
+    <a class="btn" href="#over">Ontdek Oirschot Milsim</a>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap stats">
+    <div class="stat"><strong>Samen sterk</strong><span>TEAMWORK STAAT CENTRAAL</span></div>
+    <div class="stat"><strong>Altijd in ontwikkeling</strong><span>LEREN • OEFENEN • GROEIEN</span></div>
+    <div class="stat"><strong>Één community</strong><span>RESPECT EN KAMERAADSCHAP</span></div>
+  </div>
+</div>
+
+<section id="over">
+  <div class="wrap about-grid">
+    <div class="photo"></div>
+    <div class="about">
+      <div class="kicker">Wie zijn wij?</div>
+      <h3>Een community met een missie.</h3>
       <p>
-        Welkom bij Oirschot Milsim. Een militaire simulatiecommunity
-        waar samenwerking, inzet en kameraadschap centraal staan.
-        Ontdek onze organisatie en word onderdeel van onze community.
+        Oirschot Milsim is een zelfstandige Roblox-community
+        die militaire samenwerking en organisatie op een
+        speelse manier simuleert. Leden kunnen samen activiteiten
+        doen, rollen ontdekken en bijdragen aan een sterke groep.
       </p>
-      <a class="button" href="#over">ONTDEK OIRSchOT MILSIM</a>
+      <ul class="ticks">
+        <li>Teamgerichte simulaties</li>
+        <li>Duidelijke afspraken en structuur</li>
+        <li>Ruimte om te leren en door te groeien</li>
+        <li>Respect voor ieder lid</li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <section id="over">
-    <h2 class="section-title">WELKOM BIJ OIRSCHOT MILSIM</h2>
-    <p class="description">
-      Oirschot Milsim is een Roblox-community die draait om militaire
-      simulatie, samenwerking en realistische spelbeleving.
-      Samen bouwen we aan een actieve en betrokken community.
-    </p>
-  </section>
-
-  <section id="eenheden">
-    <h2 class="section-title">ONZE ORGANISATIE</h2>
-    <p class="description">
-      Ontdek de verschillende onderdelen en mogelijkheden
-      binnen Oirschot Milsim.
-    </p>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Eenheden</h3>
-        <p>Ontdek onze verschillende eenheden en hun taken binnen de community.</p>
-      </div>
-
-      <div class="card">
-        <h3>Rangen</h3>
-        <p>Bekijk de rangstructuur en doorgroeimogelijkheden.</p>
-      </div>
-
-      <div class="card">
-        <h3>Uitrusting</h3>
-        <p>Ontdek onze uniformen en militaire uitrusting in Roblox.</p>
-      </div>
+<section class="dark" id="activiteiten">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Ontdek de community</div>
+      <h2>Meer dan alleen een game.</h2>
+      <p>
+        Van gezamenlijke oefeningen tot voertuigen en uitrusting:
+        ontdek de onderdelen van onze Roblox-wereld.
+      </p>
     </div>
-  </section>
+    <div class="cards">
+      <article class="card">
+        <div class="card-img"></div>
+        <div class="card-body">
+          <small>01 / TEAMWORK</small>
+          <h3>Gezamenlijke activiteiten</h3>
+          <p>Werk samen, volg opdrachten in de game en versterk de samenwerking binnen je team.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"></div>
+        <div class="card-body">
+          <small>02 / MATERIEEL</small>
+          <h3>Voertuigen & simulatie</h3>
+          <p>Ontdek verschillende voertuigen en ondersteunende onderdelen binnen onze virtuele wereld.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"></div>
+        <div class="card-body">
+          <small>03 / UITRUSTING</small>
+          <h3>Uitrusting & rollen</h3>
+          <p>Bekijk de verschillende rollen, kleding en uitrusting die in de community gebruikt worden.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <section id="nieuws">
-    <h2 class="section-title">NIEUWS & MEDEDELINGEN</h2>
-    <p class="description">
-      Binnenkort vind je hier de laatste updates en aankondigingen
-      van Oirschot Milsim.
-    </p>
-  </section>
+<section id="waarden">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Waar we voor staan</div>
+      <h2>Onze kernwaarden.</h2>
+      <p>Een sterke community begint bij de manier waarop we met elkaar omgaan.</p>
+    </div>
+    <div class="values">
+      <div class="value"><b>Discipline</b><p>Afspraken nakomen en verantwoordelijkheid nemen.</p></div>
+      <div class="value"><b>Teamwork</b><p>Elkaar helpen en samen doelen bereiken.</p></div>
+      <div class="value"><b>Respect</b><p>Iedereen behandelen met respect en eerlijkheid.</p></div>
+      <div class="value"><b>Ontwikkeling</b><p>Blijven leren, oefenen en verbeteren.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Word onderdeel van het team</div>
+      <h2>Klaar om mee te doen?</h2>
+      <p>Ontdek Oirschot Milsim en maak kennis met onze Roblox-community.</p>
+    </div>
+    <a class="btn" href="https://www.roblox.com/" target="_blank" rel="noopener">Bekijk Roblox</a>
+    <div class="notice">
+      <strong>Belangrijk:</strong> Oirschot Milsim is een onafhankelijke Roblox-community.
+      Deze website is niet de officiële website van het Ministerie van Defensie
+      en is niet verbonden aan of goedgekeurd door Defensie.
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
-  Oirschot Milsim © 2026 — Onafhankelijke Roblox-community.
-  Niet verbonden aan het Ministerie van Defensie.
+  <div class="wrap">
+    <strong>OIRSCHOT MILSIM</strong><br>
+    Onafhankelijke Roblox-community<br>
+    © 2026 Oirschot Milsim. Alle rechten voorbehouden.
+    <div class="credits">
+      Fotocredits en licenties: Wikimedia Commons.
+      <a href="https://commons.wikimedia.org/wiki/File:Combined_Operations_Dutch_and_German_armies.jpg" target="_blank" rel="noopener">Foto 1</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Chinook-dropt-last-met-twee-lsv.jpg" target="_blank" rel="noopener">Foto 2</a> ·
+      <a href="https://commons.wikimedia.org/wiki/Category:Military_equipment_of_the_Netherlands" target="_blank" rel="noopener">Foto 3</a>.
+      Foto's tonen echte oefeningen en uitrusting en zijn geen beelden van Oirschot Milsim.
+    </div>
+  </div>
 </footer>
 
 </body>
